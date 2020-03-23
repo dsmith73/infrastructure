@@ -1,0 +1,12 @@
+---
+# net_ping the node  
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: "Pinging {{ host }}"
+    net_ping: 
+      dest: "{{ host }}"
+      count: 10
+    register: output

@@ -1,0 +1,14 @@
+---
+# ping the node  
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: "Pinging {{ host }}"
+    ping: 
+    register: output
+  
+  - name: "{{ host }} said {{ output.ping }}"
+    debug:
+      msg: "{{ host }} said {{ output.ping }}"

@@ -1,0 +1,52 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # hostname  
+  - name: "Save the result of hostname in host"
+    raw: "hostname"
+    register: host
+
+  # nslookup  (dig only works on linux architectures)  
+  - name: "nslookup"  
+    raw: "nslookup {{ host }}"
+    register: ns_lookup_out
+
+  # systeminfo  
+  - name: "Save the result of systeminfo in sysinfo_out"
+    raw: "systeminfo.exe /fo csv"
+    register: sysinfo_out
+
+  # wmic diskdrive to get disk info  
+  - name: disk info  
+    raw: wmic.exe diskdrive get model,name,size,status
+    register: disk_info
+
+  # tasklist - all running processes  
+  - name: "tasklist"
+    raw: tasklist.exe
+    register: tasklist_out
+
+  # get all services  
+  - name: "sc queryex"
+    raw: sc.exe queryex type=service state=all
+    register: services_out
+
+  # driverquery - list all installed drivers  
+  - name: "driverquery"
+    raw: driverquery.exe
+    register: driver_out
+
+  # ip_config  
+  - name: "ipconfig"
+    raw: ipconfig.exe /all
+    register: ipconifg_out
+
+  # netstat -r  
+  - name: "netstat"
+    raw: netstat.exe -r
+    register: netstat_out
+
