@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+
+  tasks:
+  # top  
+  - name: "top"
+    shell: top
+    register: top_out
+    

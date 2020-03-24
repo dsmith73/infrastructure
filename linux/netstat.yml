@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # netstat -r  
+  - name: "netstat"
+    raw: netstat -r
+    register: netstat_out
+

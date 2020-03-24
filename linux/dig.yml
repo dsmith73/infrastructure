@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # dig on host  
+  - name: "dig"
+    raw: "dig {{ host }}"
+    register: dig_out
+

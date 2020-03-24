@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+
+  tasks:
+  # df    
+  - name: "disk space"
+    shell: df
+    register: disk_out
+    

@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # arp on host  
+  - name: "arp info"
+    raw: arp -e
+    register: arp_out
+

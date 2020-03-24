@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+
+  tasks:
+  # ps  
+  - name: "process info"
+    shell: ps
+    register: process_out
+    

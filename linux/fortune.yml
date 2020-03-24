@@ -1,0 +1,11 @@
+---
+# just because...  
+
+- hosts: localhost
+
+  tasks:
+  # fortune prediction from linux terminal    
+  - name: "fortune"
+    shell: fortune
+    register: fortune_out
+    

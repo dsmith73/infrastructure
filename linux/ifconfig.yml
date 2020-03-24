@@ -7,5 +7,5 @@
   # ip_config  
   - name: "ifconfig"
     shell: ifconfig
-    register: ifconifg_out
+    register: ipconifg_out
     

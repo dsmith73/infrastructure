@@ -1,0 +1,10 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+
+  tasks:
+  # uname    
+  - name: "sys info"
+    shell: uname
+    register: sysinfo_out

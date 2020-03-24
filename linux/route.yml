@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # route on host  
+  - name: "route"
+    raw: route
+    register: route_out
+
