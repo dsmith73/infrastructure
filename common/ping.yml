@@ -7,8 +7,8 @@
   tasks:
   - name: "Pinging {{ host }}"
     ping: 
-    register: output
+    register: ping_out 
   
-  - name: "{{ host }} said {{ output.ping }}"
+  - name: "{{ host }} said {{ ping_out.ping }}"
     debug:
-      msg: "{{ host }} said {{ output.ping }}"
+      msg: "{{ host }} said {{ ping_out.ping }}"

@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # ip_config  
+  - name: "ipconfig"
+    raw: ipconfig.exe /all
+    register: ipconifg_out
+    

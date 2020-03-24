@@ -1,0 +1,12 @@
+---
+# win_disk the node  
+### win_disk requires powershell running on the remote node  
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # wmic diskdrive to get disk info  
+  - name: disk info  
+    raw: wmic.exe diskdrive get model,name,size,status
+    register: disk_info

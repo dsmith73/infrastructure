@@ -1,0 +1,12 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # whoami  
+  - name: Save the result of 'whoami' in 'whoami_out'
+    raw: whoami
+    register: whoami_out
+    

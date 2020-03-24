@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+
+  tasks:
+  # ip_config  
+  - name: "ifconfig"
+    shell: ifconfig
+    register: ifconifg_out
+    

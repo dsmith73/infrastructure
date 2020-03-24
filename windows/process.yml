@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # tasklist - all running processes  
+  - name: "tasklist"
+    raw: tasklist.exe
+    register: tasklist_out

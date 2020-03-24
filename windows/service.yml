@@ -1,0 +1,9 @@
+---
+
+- host: localhost
+
+  tasks:
+  # get all services  
+  - name: "sc queryex"
+    raw: sc.exe queryex type=service state=all
+    register: services_out

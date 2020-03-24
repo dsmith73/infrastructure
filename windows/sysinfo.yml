@@ -1,0 +1,13 @@
+---
+
+# Basic info on the node   
+
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  # systeminfo  
+  - name: "Save the result of systeminfo in sysinfo_out"
+    raw: "systeminfo.exe /fo csv"
+    register: sysinfo_out
+    

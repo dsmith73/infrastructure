@@ -1,0 +1,11 @@
+---
+# Basic info on the node   
+
+- hosts: localhost
+  
+  tasks:
+  # nslookup  (dig only works on linux architectures)  
+  - name: nslookup  
+    raw: "nslookup {{ host }}"
+    register: ns_lookup_out
+

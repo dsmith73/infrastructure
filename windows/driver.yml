@@ -1,0 +1,10 @@
+---
+
+- hosts: localhost
+
+  tasks:
+  # driverquery - list all installed drivers  
+  - name: "driverquery"
+    raw: driverquery.exe
+    register: driver_out
+    
