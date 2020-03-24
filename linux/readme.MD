@@ -1,4 +1,4 @@
-# Windows specific node level plays  
+# Linux specific node level plays  
 #### Used to pull information about a node  
 #### for inventory or investigation  
 
